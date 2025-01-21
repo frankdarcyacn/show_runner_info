@@ -1,0 +1,20 @@
+name: Show Info
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-command:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Show kernel version
+        run: uname -a
+
+      - name: Find CAN kernel module files
+        run: find /lib/modules -name *can*
+
+      - name: Try to add CAN kernel modules
+        run: modprobe can
