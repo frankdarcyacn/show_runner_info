@@ -20,7 +20,7 @@ jobs:
         run: ls -la /usr/src/*
 
       - name: Show .config
-        run: cat /usr/src/linux-headers-6.8.0-1020-azure/.config
+        run: find /usr/src/ -name .config -exec cat {} \;
 
       - name: Add can kernel module
         run: sudo modprobe can
