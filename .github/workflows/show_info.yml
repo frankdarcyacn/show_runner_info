@@ -13,8 +13,8 @@ jobs:
       - name: Show kernel version
         run: uname -a
 
-      - name: Find CAN kernel module files
-        run: find /lib/modules -name *can*
+      - name: Find kernel module files
+        run: find / -name *.ko*
 
       - name: list /usr/src/
         run: ls -la /usr/src/*
