@@ -16,5 +16,11 @@ jobs:
       - name: Find CAN kernel module files
         run: find /lib/modules -name *can*
 
-      - name: Try to add CAN kernel modules
+      - name: Add can kernel module
         run: sudo modprobe can
+
+      - name: Add can-raw kernel module
+        run: sudo modprobe can-raw
+
+      - name: Add vcan kernel module
+        run: sudo modprobe vcan
