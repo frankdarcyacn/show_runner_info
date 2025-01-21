@@ -28,11 +28,15 @@ jobs:
       - name: Show .config
         run: find /usr/src/ -name .config -exec cat {} \;
 
-      - name: Add can kernel module
+      - name: Add can kernel modules
         run: sudo modprobe can
-
-      - name: Add can-raw kernel module
         run: sudo modprobe can-raw
-
-      - name: Add vcan kernel module
         run: sudo modprobe vcan
+
+      - name: Set up vcan0
+        run: sudo ip link add dev vcan0 type vcan
+        run: sudo ip link set vcan0 mtu 16
+        run: sudo ip link set up vcan0
+
+      - name: Show interfaces
+        run: ip a
