@@ -10,8 +10,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Show kernel version
+      - name: Show kernel info - all
         run: uname -a
+
+      - name: Show kernel release
+        run: uname -r
+
+      - name: Install linux-modules-extra-$(uname -r)
+        run: sudo apt install linux-modules-extra-$(uname -r)
 
       - name: Find kernel module files
         run: sudo find / -name *.ko*
