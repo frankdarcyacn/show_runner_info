@@ -16,6 +16,12 @@ jobs:
       - name: Find CAN kernel module files
         run: find /lib/modules -name *can*
 
+      - name: list /usr/src/
+        run: ls -la /usr/src
+
+      - name: Show .config
+        run: cat /usr/src/linux-headers-6.8.0-1017-azure-generic/.config
+
       - name: Add can kernel module
         run: sudo modprobe can
 
