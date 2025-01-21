@@ -20,7 +20,7 @@ jobs:
         run: sudo apt install linux-modules-extra-$(uname -r)
 
       - name: Find kernel module files
-        run: sudo find / -name *.ko*
+        run: sudo find /usr/lib/modules/ -name *.ko*
 
       - name: list /usr/src/
         run: ls -la /usr/src/*
