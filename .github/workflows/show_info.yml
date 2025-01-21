@@ -14,7 +14,7 @@ jobs:
         run: uname -a
 
       - name: Find kernel module files
-        run: find / -name *.ko*
+        run: sudo find / -name *.ko*
 
       - name: list /usr/src/
         run: ls -la /usr/src/*
