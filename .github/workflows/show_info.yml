@@ -48,3 +48,7 @@ jobs:
 
       - name: Show interfaces
         run: ip a
+
+      - name: Check for python
+        run: python3 --version
+
