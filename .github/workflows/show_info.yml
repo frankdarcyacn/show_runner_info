@@ -17,4 +17,4 @@ jobs:
         run: find /lib/modules -name *can*
 
       - name: Try to add CAN kernel modules
-        run: modprobe can
+        run: sudo modprobe can
